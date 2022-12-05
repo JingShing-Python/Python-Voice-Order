@@ -6,3 +6,4 @@ if __name__ == '__main__':
     voice_detecter = Voice_Detect_Helper()
     recorder()
     voice_detecter()
+    # you can get result from voice_detecter.result
