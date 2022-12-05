@@ -1,7 +1,7 @@
 def chinese_to_arabic(chinese_num):
     chinese_char_dict = {
         '〇' : 0, '一' : 1, '二' : 2, '三' : 3, '四' : 4, '五' : 5, '六' : 6, '七' : 7, '八' : 8, '九' : 9, '零' : 0,
-        '壹' : 1, '贰' : 2, '叁' : 3, '肆' : 4, '伍' : 5, '陆' : 6, '柒' : 7, '捌' : 8, '玖' : 9, '貮' : 2, '两' : 2,
+        '壹' : 1, '贰' : 2, '叁' : 3, '肆' : 4, '伍' : 5, '陆' : 6, '柒' : 7, '捌' : 8, '玖' : 9, '貮' : 2, '兩' : 2,
     }
     chinese_char_unit = {
         '十' : 10,
@@ -47,3 +47,4 @@ def chinese_to_arabic(chinese_num):
     return val
 
 # print(chinese_to_arabic("九億七千八百萬八千八百八十八"))
+# print(chinese_to_arabic("一"))

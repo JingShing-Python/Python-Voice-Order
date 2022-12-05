@@ -1,5 +1,10 @@
 import pandas as pd
 import re
+from setting import chinese_to_arabic
+chinese_char_dict = {
+    '〇' : 0, '一' : 1, '二' : 2, '三' : 3, '四' : 4, '五' : 5, '六' : 6, '七' : 7, '八' : 8, '九' : 9, '零' : 0,
+    '壹' : 1, '贰' : 2, '叁' : 3, '肆' : 4, '伍' : 5, '陆' : 6, '柒' : 7, '捌' : 8, '玖' : 9, '貮' : 2, '兩' : 2,
+}
 def load_xlsx(file_name = 'menu.xlsx'):
     xls = pd.ExcelFile(file_name)
     df = xls.parse(xls.sheet_names[0])
@@ -37,13 +42,21 @@ def process_price_with_order(menu_dict, order):
             if top == None:
                 top = item
             else:
+                if item in chinese_char_dict:
+                    item = chinese_to_arabic(item)
                 price_dict[top] = {'amount':item, 'price':None}
                 top = None
         else:
             if top == None:
                 top = item
             else:
-                price_dict[item] = {'amount':int(top), 'price':None}
+                if top in chinese_char_dict:
+                    top = chinese_to_arabic(top)
+                try:
+                    top = int(top)
+                except:
+                    top = 0
+                price_dict[item] = {'amount':top, 'price':None}
                 top = None
 
     total = 0
@@ -70,6 +83,7 @@ def sum_up_total_line(total, none_list):
     return line
 
 # write_xlsx()
-data_dict = load_xlsx()
-menu_dict = process_data_to_menu(data_dict)
-# print(process_price_with_order(menu_dict, '100個火腿和7000個蛋糕'))
+# data_dict = load_xlsx()
+# menu_dict = process_data_to_menu(data_dict)
+# print(process_price_with_order(menu_dict, '100個火腿和7000個蛋糕和兩個大雞雞'))
+# print(process_price_with_order(menu_dict, '一個火腿和7000個蛋糕和兩個大雞雞'))

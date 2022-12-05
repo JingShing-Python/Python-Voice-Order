@@ -41,8 +41,9 @@ def order_manage():
             while(1):
                 order_menu_line = listener()
                 if '和' in order_menu_line or '個' in order_menu_line:
-                    total_order+=order_menu_line
-                elif '點完餐' in order_menu_line:
+                    total_order+=order_menu_line+'和'
+                elif '餐' in order_menu_line:
+                    # 點完餐
                     break
             line_speaker(process_price_with_order(menu_dict, total_order))
 
