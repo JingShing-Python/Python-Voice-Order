@@ -7,3 +7,4 @@ An project that can transfer your voice order into word command.
 * speech_recognition
 * openpyxl
 * pygame
+* gtts
