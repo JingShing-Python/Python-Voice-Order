@@ -5,3 +5,4 @@ An project that can transfer your voice order into word command.
 
 * pyaudio
 * speech_recognition
+* openpyxl
