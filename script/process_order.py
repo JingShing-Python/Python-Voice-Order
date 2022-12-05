@@ -51,11 +51,25 @@ def process_price_with_order(menu_dict, order):
         if item in menu_dict:
             price_dict[item]['price'] = price_dict[item]['amount'] * menu_dict[item]
             total += price_dict[item]['price']
+    none_list = []
+    for item in price_dict:
+        if price_dict[item]['price']==None:
+            none_list.append(item)
 
     print(menu_dict)
     print(price_dict)
+    # return total, none_list
+    return sum_up_total_line(total, none_list)
+
+def sum_up_total_line(total, none_list):
+    line = '總共是' + str(total) + '元。'
+    if len(none_list)>0:
+        line+='不過，我們沒有：'
+        for item in none_list:
+            line+=item + ', '
+    return line
 
 # write_xlsx()
 data_dict = load_xlsx()
 menu_dict = process_data_to_menu(data_dict)
-process_price_with_order(menu_dict, '100個火腿和7000個蛋糕')
+# print(process_price_with_order(menu_dict, '100個火腿和7000個蛋糕'))

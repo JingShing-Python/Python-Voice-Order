@@ -30,6 +30,7 @@ class Voice_Detect_Helper:
             # using google service
             self.result = self.r.recognize_google(audio,language=self.language)
             print("Transcription: " + self.result)
+            return self.result
         except:
             print("Could not understand audio")
 
