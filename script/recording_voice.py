@@ -2,7 +2,7 @@ import pyaudio
 import wave
 
 class Recording_Helper:
-    def __init__(self, chunk = 1024, sample_format = pyaudio.paInt16, channels = 2, fs = 44100, seconds = 5, filename = "test.wav"):
+    def __init__(self, chunk = 1024, sample_format = pyaudio.paInt16, channels = 2, fs = 44100, seconds = 5, file_name = "test.wav"):
         # sample chunk size
         self.chunk = chunk
         # sample format: paFloat32, paInt32, paInt24, paInt16, paInt8, paUInt8, paCustomFormat
@@ -14,7 +14,7 @@ class Recording_Helper:
         # recording seconds
         self.seconds = seconds
         # recording file name
-        self.filename = filename
+        self.file_name = file_name
 
         self.p = pyaudio.PyAudio()
         # init pyaudio object
@@ -42,7 +42,7 @@ class Recording_Helper:
         print('stop recording...')
 
         # open voice file
-        wf = wave.open(self.filename, 'wb')
+        wf = wave.open(self.file_name, 'wb')
         # set channel
         wf.setnchannels(self.channels)
         # set format
