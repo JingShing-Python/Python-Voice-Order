@@ -52,3 +52,6 @@ class Recording_Helper:
         # save
         wf.writeframes(b''.join(frames))
         wf.close()
+
+    def __call__(self):
+        self.recording_voice()
