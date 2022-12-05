@@ -75,6 +75,7 @@ def process_price_with_order(menu_dict, order):
     return sum_up_total_line(total, none_list)
 
 def sum_up_total_line(total, none_list):
+    total = format(total, ",")
     line = '總共是' + str(total) + '元。'
     if len(none_list)>0:
         line+='不過，我們沒有：'
