@@ -3,11 +3,11 @@ An project that can transfer your voice order into word command.
 
 ## Module you need
 
-* pyaudio
-* speech_recognition
-* openpyxl
-* pygame
-* gtts
+* ```pyaudio```
+* ```speech_recognition```
+* ```openpyxl```
+* ```pygame```
+* ```gtts```
 
 ## Log
 ### Ver1.0
