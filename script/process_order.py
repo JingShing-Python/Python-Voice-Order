@@ -50,12 +50,9 @@ def process_price_with_order(menu_dict, order):
             if top == None:
                 top = item
             else:
-                if top in chinese_char_dict:
+                if top.isnumeric():
                     top = chinese_to_arabic(top)
-                try:
-                    top = int(top)
-                except:
-                    top = 0
+                top = int(top)
                 price_dict[item] = {'amount':top, 'price':None}
                 top = None
 
@@ -84,7 +81,7 @@ def sum_up_total_line(total, none_list):
     return line
 
 # write_xlsx()
-# data_dict = load_xlsx()
+# data_dict = load_xlsx('script/menu.xlsx')
 # menu_dict = process_data_to_menu(data_dict)
-# print(process_price_with_order(menu_dict, '100個火腿和7000個蛋糕和兩個大雞雞'))
-# print(process_price_with_order(menu_dict, '一個火腿和7000個蛋糕和兩個大雞雞'))
+# print(process_price_with_order(menu_dict, '100個火腿和7000個蛋糕'))
+# print(process_price_with_order(menu_dict, '兩千萬個雞腿和兩個蛋糕'))
