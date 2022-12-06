@@ -26,3 +26,6 @@ An project that can transfer your voice order into word command.
 ## To do list
 - [ ] More calculate option
 - [ ] More clear word spread
+- [ ] More interesting response.
+- [ ] With a GUI.
+- [ ] May on flask.
