@@ -1,6 +1,10 @@
 # Python-Voice-Order
 An project that can transfer your voice order into word command.
 
+## How to use
+* There are two script to use it: ```detect_voice_main.py``` and ```order_manager.py```
+* It is like what its filename called. ```detect voice function``` and ```order bot```.
+
 ## Module you need
 
 * ```pyaudio```
