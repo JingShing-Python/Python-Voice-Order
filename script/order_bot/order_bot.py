@@ -1,6 +1,8 @@
 # voice process modules
 # detect voice
-from speech_recognition import Recognizer, Microphone
+from speech_recognition import Recognizer, Microphone, WavFile
+from pyaudio import PyAudio, paInt16
+import wave
 # generate voice
 from pygame import mixer
 from tempfile import NamedTemporaryFile
@@ -51,7 +53,61 @@ class Order_Bot:
             print(result)
             return result
         elif self.mode == 'voice2':
-            pass
+            result = None
+            while(result == None):
+                sleep(1)
+                # sample chunk size
+                chunk = 1024
+                # sample format: paFloat32, paInt32, paInt24, paInt16, paInt8, paUInt8, paCustomFormat
+                sample_format = paInt16
+                # sound channel
+                channels = 2
+                # sample frequency rate: 44100 ( CD ), 48000 ( DVD ), 22050, 24000, 12000 and 11025
+                fs = 44100
+                # recording seconds
+                seconds = 5
+                # init pyaudio object
+                p = PyAudio()
+
+                print("starting recording...")
+
+                # active voice stream
+                stream = p.open(format=sample_format, channels=channels, rate=fs, frames_per_buffer=chunk, input=True)
+                frames = []
+                # voice list
+                for _ in range(0, int(fs / chunk * seconds)):
+                    # record voice into list
+                    data = stream.read(chunk)
+                    frames.append(data)
+                # stop recording
+                stream.stop_stream()
+                # close stream
+                stream.close()
+                p.terminate()
+                print('stop recording...')
+
+                
+                with NamedTemporaryFile(delete=True) as fp:
+                    # open voice file
+                    wf = wave.open("{}.wav".format(fp.name), 'wb')
+                    # set channel
+                    wf.setnchannels(channels)
+                    # set format
+                    wf.setsampwidth(p.get_sample_size(sample_format))
+                    # set sampling frequency rate
+                    wf.setframerate(fs)
+                    # save
+                    wf.writeframes(b''.join(frames))
+                    wf.close()
+                    
+                    with WavFile('{}.wav'.format(fp.name)) as source:
+                        audio = self.recognizer.listen(source)
+                        try:
+                            result = self.recognizer.recognize_google(audio,language = 'zh-tw')
+                        except:
+                            continue
+            print(result)
+            return result
 
     def order_manage(self):
         data_dict = load_xlsx(file_name=menu_xlsx_path)
@@ -130,5 +186,5 @@ class Order_Bot:
 
 if __name__ == '__main__':
     order_bot = Order_Bot('text')
-    order_bot.mode = 'voice1'
+    order_bot.mode = 'voice2'
     order_bot()
