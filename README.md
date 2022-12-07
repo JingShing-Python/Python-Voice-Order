@@ -31,21 +31,22 @@ An project that can transfer your voice order into word command.
 * Add order bot class
 * Classify file to different folder
 * Add new voice detect method(tempfile + pyaudio)
+* More conversation option
 
 ## To do list
-- [ ] More calculate option
+* More calculate option
   - [ ] equation calculate(方程式計算)
   - [ ] Budget system(預算系統)
   - [ ] law calculate(法律計算機，判刑、罰款)
   - [ ] promotion calculate(優惠計算機)
 
-- [ ] More interesting response
+* More interesting response
   - [ ] promotion hint(詢問時間和問好時做優惠提醒或點餐提醒)
 
 * technical problem
   - [ ] More clear word spread(字詞分割辨認)
   - [ ] voice detect recorrect(語音辨識修正)
 
-- [ ] With a GUI.
+* With a GUI.
   - [ ] May on flask(Online)
   - [ ] TKinter(Local)
