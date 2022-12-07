@@ -33,6 +33,9 @@ An project that can transfer your voice order into word command.
 * Add new voice detect method(tempfile + pyaudio)
 * More conversation option
 
+## Ver1.3 Add Chinese num to arabic number
+* Add chinese num module for transform chinese num in string into arabic number.
+
 ## To do list
 * More calculate option
   - [ ] equation calculate(方程式計算)
