@@ -27,9 +27,23 @@ An project that can transfer your voice order into word command.
 * Add new method to record: temp record with pyaudio.
 * Add what time is it module. Now you can ask bot: 幾點了？
 
+## Ver1.2 Add order bot
+* Add order bot class
+
 ## To do list
 - [ ] More calculate option
-- [ ] More clear word spread
-- [ ] More interesting response.
+  - [ ] equation calculate(方程式計算)
+  - [ ] Budget system(預算系統)
+  - [ ] law calculate(法律計算機，判刑、罰款)
+  - [ ] promotion calculate(優惠計算機)
+
+- [ ] More interesting response
+  - [ ] promotion hint(詢問時間和問好時做優惠提醒或點餐提醒)
+
+* technical problem
+  - [ ] More clear word spread(字詞分割辨認)
+  - [ ] voice detect recorrect(語音辨識修正)
+
 - [ ] With a GUI.
-- [ ] May on flask.
+  - [ ] May on flask(Online)
+  - [ ] TKinter(Local)
