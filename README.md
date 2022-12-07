@@ -30,6 +30,7 @@ An project that can transfer your voice order into word command.
 ## Ver1.2 Add order bot
 * Add order bot class
 * Classify file to different folder
+* Add new voice detect method(tempfile + pyaudio)
 
 ## To do list
 - [ ] More calculate option
