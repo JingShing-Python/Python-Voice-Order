@@ -27,6 +27,8 @@ class Order_Bot:
         self.mode = mode
         # recognizer init    
         self.recognizer = Recognizer()
+        # user name
+        self.master = None
 
     def line_speaker(self, texts,lang='zh-tw'):
         with NamedTemporaryFile(delete=True) as fp:
@@ -55,7 +57,6 @@ class Order_Bot:
         elif self.mode == 'voice2':
             result = None
             while(result == None):
-                sleep(1)
                 # sample chunk size
                 chunk = 1024
                 # sample format: paFloat32, paInt32, paInt24, paInt16, paInt8, paUInt8, paCustomFormat
@@ -85,7 +86,6 @@ class Order_Bot:
                 stream.close()
                 p.terminate()
                 print('stop recording...')
-
                 
                 with NamedTemporaryFile(delete=True) as fp:
                     # open voice file
@@ -115,9 +115,17 @@ class Order_Bot:
         self.line_speaker('您好，很高興為您服務，請問要做些甚麼？')
         while(1):
             order_line = self.listener()
+            
             # 問好
             if '你好' in order_line:
                 self.line_speaker('你好。')
+                if self.master!=None:
+                    self.line_speaker('我的'+self.master)
+            
+            # 我的名字是
+            elif '我的名字是' in order_line or '我是' in order_line:
+                self.master=order_line.split('是')[-1]
+                self.line_speaker('你就是我的Master嗎？'+self.master)
 
             # 有什麼吃的？
             elif '吃的' in order_line:
