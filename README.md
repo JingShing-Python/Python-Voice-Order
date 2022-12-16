@@ -1,3 +1,4 @@
+English | [繁體中文](README_TCH.md)
 # Python-Voice-Order
 An project that can transfer your voice order into word command.
 
