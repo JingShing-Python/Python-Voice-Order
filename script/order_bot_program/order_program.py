@@ -49,7 +49,11 @@ class page_module(Frame):
         self.master = master.root
         
         # order bot
-        self.order_bot = Order_Bot('tk_text')
+        mode = 'tk_text'
+        self.order_bot = Order_Bot(mode) # you can edit mode here
+        # tk_text, voice1, voice2
+        # voice1 is using google(very long time)
+        # voice2 is using local microphone(5 sec)
 
         # display last order
         self.last_order = StringVar()

@@ -56,6 +56,8 @@ class Order_Bot:
             result = command_data_dict['command_line']
             print(result)
         elif self.mode == 'voice1':
+            # this mode using google to record
+            # so it takes long time
             result = None
             while(result == None):
                 with Microphone() as source:
