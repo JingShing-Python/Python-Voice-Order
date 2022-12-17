@@ -44,6 +44,7 @@ class Order_Bot:
             if self.has_mixer:
                 mixer.music.load('{}.mp3'.format(fp.name))
                 mixer.music.play()
+        command_data_dict['bot_reply']=texts
         print(texts)
 
     def listener(self):
