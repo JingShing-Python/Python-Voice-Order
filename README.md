@@ -63,6 +63,7 @@ My wish to make this a convenient tool help people who can not read or people ca
 * With a GUI.
   - [ ] May on flask(Online)
   - [X] TKinter(Local)
+    - 22/12/17
 
 * Order option
   - [ ] You can use voice to edit menu price or item
