@@ -44,6 +44,7 @@ My wish to make this a convenient tool help people who can not read or people ca
 
 ## Ver1.3.1 Add tkinter module
 * Add a ```order_program.py``` can use tkinter to order.
+* Add threading to process front end and back end
 
 ## To do list
 * More calculate option
@@ -61,7 +62,7 @@ My wish to make this a convenient tool help people who can not read or people ca
 
 * With a GUI.
   - [ ] May on flask(Online)
-  - [ ] TKinter(Local)
+  - [X] TKinter(Local)
 
 * Order option
   - [ ] You can use voice to edit menu price or item
