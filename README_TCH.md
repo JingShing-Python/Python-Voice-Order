@@ -11,6 +11,8 @@
 
 ## 你所需要安裝的模塊
 
+> 可以使用這個指令安裝所有所需的模塊 ```pip install -r requirements.txt```
+
 * ```pyaudio```
 * ```speech_recognition```
 * ```openpyxl```
