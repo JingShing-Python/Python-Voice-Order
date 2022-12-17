@@ -42,6 +42,9 @@ My wish to make this a convenient tool help people who can not read or people ca
 ## Ver1.3 Add Chinese num to arabic number
 * Add chinese num module for transform chinese num in string into arabic number.
 
+## Ver1.3.1 Add tkinter module
+* Add a ```order_program.py``` can use tkinter to order.
+
 ## To do list
 * More calculate option
   - [ ] equation calculate(方程式計算)
