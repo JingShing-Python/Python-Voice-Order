@@ -22,7 +22,12 @@ from process_order import load_xlsx, process_data_to_menu, process_price_with_or
 class Order_Bot:
     def __init__(self, mode = 'voice1'):
         # speaker init
-        mixer.init()
+        self.has_mixer = False
+        try:
+            mixer.init()
+            self.has_mixer = True
+        except:
+            pass
         # mode: voice1, voice2, text
         self.mode = mode
         # recognizer init    
@@ -36,8 +41,9 @@ class Order_Bot:
         with NamedTemporaryFile(delete=True) as fp:
             tts = gTTS(text=texts,lang=lang)
             tts.save("{}.mp3".format(fp.name))
-            mixer.music.load('{}.mp3'.format(fp.name))
-            mixer.music.play()
+            if self.has_mixer:
+                mixer.music.load('{}.mp3'.format(fp.name))
+                mixer.music.play()
         print(texts)
 
     def listener(self):
