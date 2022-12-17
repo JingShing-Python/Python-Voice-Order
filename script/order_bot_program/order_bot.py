@@ -17,7 +17,7 @@ from setting import menu_xlsx_path, command_data_dict
 
 # order process modules
 # process order
-from process_order import load_xlsx, process_data_to_menu, process_price_with_order
+from order_process.process_order import load_xlsx, process_data_to_menu, process_price_with_order
 
 class Order_Bot:
     def __init__(self, mode = 'voice1'):
