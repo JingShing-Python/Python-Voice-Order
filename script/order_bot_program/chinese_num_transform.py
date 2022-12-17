@@ -97,3 +97,9 @@ def chinese_in_string_transform(inputs: str) -> str:
     output = re.sub(cn_pattern,
                     lambda x: __sub_util(x.group(),"number"), inputs)
     return output
+
+if __name__ == '__main__':
+    # num = '一千七百七十一個蛋糕'
+    # print(chinese_in_string_transform(num))
+    nume = '十七億三千萬零八'
+    print(chinese_to_arabic(nume))
