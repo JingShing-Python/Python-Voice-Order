@@ -13,7 +13,7 @@ from datetime import datetime
 from time import sleep
 
 # setting
-from setting import menu_xlsx_path
+from setting import menu_xlsx_path, command_data_dict
 
 # order process modules
 # process order
@@ -49,6 +49,12 @@ class Order_Bot:
     def listener(self):
         if self.mode == 'text':
             result = input()
+        elif self.mode == 'tk_text':
+            while(not command_data_dict['is_command']):
+                pass
+            command_data_dict['is_command'] = False
+            result = command_data_dict['command_line']
+            print(result)
         elif self.mode == 'voice1':
             result = None
             while(result == None):
@@ -120,6 +126,7 @@ class Order_Bot:
         data_dict = load_xlsx(file_name=menu_xlsx_path)
         menu_dict = process_data_to_menu(data_dict)
         self.line_speaker('您好，很高興為您服務，請問要做些甚麼？')
+        order_line = self.listener()
             
         # 問好
         if '你好' in order_line:

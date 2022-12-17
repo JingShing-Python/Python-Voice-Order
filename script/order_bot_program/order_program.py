@@ -7,6 +7,8 @@ from tkinter import filedialog
 # order bot
 from order_bot import Order_Bot
 
+from setting import command_data_dict
+
 class Gui_helper_main:
     def __init__(self):
         self.root = Tk()
@@ -30,6 +32,10 @@ class Gui_helper_main:
         self.frame.grid(column=0, row=0, sticky=N+W)
 
     def run(self):
+        from threading import Thread
+        thread1 = Thread(target=self.frames[0].order_bot)
+        thread1.setDaemon(True)
+        thread1.start()
         self.root.mainloop()
 
     def quit(self):
@@ -43,7 +49,7 @@ class page_module(Frame):
         self.master = master.root
         
         # order bot
-        self.order_bot = Order_Bot('text')
+        self.order_bot = Order_Bot('tk_text')
 
         # display last order
         self.last_order = StringVar()
@@ -64,6 +70,8 @@ class page_module(Frame):
 
     def order(self):
         order_command = self.order_enter_box.get()
+        command_data_dict['command_line']=order_command
+        command_data_dict['is_command']=True
         
 if __name__ == '__main__':
     main = Gui_helper_main()
