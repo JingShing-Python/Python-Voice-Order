@@ -11,6 +11,8 @@ My wish to make this a convenient tool help people who can not read or people ca
 
 ## Module you need
 
+> You can use this command to install all the module you need ```pip install -r requirements.txt```
+
 * ```pyaudio```
 * ```speech_recognition```
 * ```openpyxl```
