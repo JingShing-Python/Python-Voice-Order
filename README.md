@@ -46,12 +46,18 @@ O wish to make this a convenient tool help people who can not read or people can
 * Add a ```order_program.py``` can use tkinter to order.
 * Add threading to process front end and back end
 
+## Ver1.4 Add module process
+* Add ```order_bot_program_module``` As new program that can help adding module easier
+* Add dict in setting that can help you import your own modules
+
 ## To do list
 * More calculate option
   - [ ] equation calculate(方程式計算)
   - [ ] Budget system(預算系統)
   - [ ] law calculate(法律計算機，判刑、罰款)
   - [ ] promotion calculate(優惠計算機)
+  - [X] Add module process
+    - 22/12/19
 
 * More interesting response
   - [ ] promotion hint(詢問時間和問好時做優惠提醒或點餐提醒)
