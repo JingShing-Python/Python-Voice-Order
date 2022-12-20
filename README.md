@@ -6,8 +6,10 @@ An project that can transfer your voice order into word command.
 O wish to make this a convenient tool help people who can not read or people can not see or you just don't have hand to use this tool. It will be convenient to just tell bot what you want and it can help you to precess these problems.
 
 ## How to use
-* There are two script to use it: ```detect_voice_main.py``` and ```order_manager.py```
-* It is like what its filename called. ```detect voice function``` and ```order bot```.
+* Latest version:
+  * ```order_bot_program_module_custom```
+~~* There are two script to use it: ```detect_voice_main.py``` and ```order_manager.py```~~
+~~* It is like what its filename called. ```detect voice function``` and ```order bot```.~~
 
 ## Module you need
 
