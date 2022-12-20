@@ -6,8 +6,10 @@
 此項目的願景是將這個工具推廣到無法讀懂文字的人、無法看到的人還有騰不出手的人，這個工具應當能夠替他們完成工作和指令，並且具有人道關懷的價值和親切的問候和協助。
 
 ## 如何使用
-* 這裡有兩個腳本可以啟動： ```detect_voice_main.py``` 和 ```order_manager.py```
-* 作用名如其名 ```detect voice function``` 和 ```order bot```.
+* 最新版本:
+  * ```order_bot_program_module_custom```
+* ~~這裡有兩個腳本可以啟動： ```detect_voice_main.py``` 和 ```order_manager.py```~~
+* ~~作用名如其名 ```detect voice function``` 和 ```order bot```.~~
 
 ## 你所需要安裝的模塊
 
