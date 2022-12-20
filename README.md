@@ -8,8 +8,10 @@ O wish to make this a convenient tool help people who can not read or people can
 ## How to use
 * Latest version:
   * ```order_bot_program_module_custom```
-~~* There are two script to use it: ```detect_voice_main.py``` and ```order_manager.py```~~
-~~* It is like what its filename called. ```detect voice function``` and ```order bot```.~~
+
+* ~~There are two script to use it: ```detect_voice_main.py``` and ```order_manager.py```~~
+
+* ~~It is like what its filename called. ```detect voice function``` and ```order bot```.~~
 
 ## Module you need
 
