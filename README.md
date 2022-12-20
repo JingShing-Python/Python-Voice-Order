@@ -58,6 +58,9 @@ O wish to make this a convenient tool help people who can not read or people can
 ## Ver1.5 Make module import even easier
 * shorten the module import by using exec and dict
 
+## Ver1.5.1 Fixed Chinese number to Arabic number
+* Fix ```chinese_num_transform.py```
+
 ## To do list
 * More calculate option
   - [ ] equation calculate(方程式計算)
