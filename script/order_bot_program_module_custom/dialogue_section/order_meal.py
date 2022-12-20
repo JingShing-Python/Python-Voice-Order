@@ -1,5 +1,5 @@
 from order_process.process_order import load_xlsx, process_data_to_menu, process_price_with_order
-menu_xlsx_path = '..\order_process\menu.xlsx'
+menu_xlsx_path = 'script\order_bot_program_module_custom\order_process\menu.xlsx'
 data_dict = load_xlsx(file_name=menu_xlsx_path)
 menu_dict = process_data_to_menu(data_dict)
 def order_meal(self):
