@@ -79,7 +79,7 @@ def __sub_util(inputs, sub_mode: str = "number") -> str:
             print(f"WARN: {e}")
             return inputs
 def chinese_in_string_transform(inputs: str) -> str:
-    inputs = inputs.replace("廿", "二十").replace("半", "0.5").replace("两", "2")
+    inputs = inputs.replace("廿", "二十").replace("半", "0.5").replace("两", "2").replace('兩','2')
     # date
     inputs = re.sub(
         fr"((({smart_cn_pattern})|({cn_pattern}))年)?([{all_num}十]+月)?([{all_num}十]+日)?",
@@ -100,6 +100,7 @@ def chinese_in_string_transform(inputs: str) -> str:
 
 if __name__ == '__main__':
     # num = '一千七百七十一個蛋糕'
-    # print(chinese_in_string_transform(num))
-    nume = '十七億三千萬零八'
-    print(chinese_to_arabic(nume))
+    num = input()
+    print(chinese_in_string_transform(num))
+    # nume = '十七億三千萬零八'
+    # print(chinese_to_arabic(nume))
