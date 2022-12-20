@@ -2,7 +2,7 @@ import re
 from chinese_num_conf import UNIT_CN2AN
 all_num = "零一二三四五六七八九"
 all_unit = "".join(list(UNIT_CN2AN.keys()))
-cn_pattern = f"负?([{all_num}{all_unit}]+点)?[{all_num}{all_unit}]+"
+cn_pattern = f"負?([{all_num}{all_unit}]+點)?[{all_num}{all_unit}]+"
 smart_cn_pattern = f"-?([0-9]+.)?[0-9]+[{all_unit}]+"
 def chinese_to_arabic(chinese_num):
     chinese_char_dict = {
@@ -24,18 +24,14 @@ def chinese_to_arabic(chinese_num):
     }
     unit = 0
     ldig = []
-    # print(chinese_num)
     for char_digit in reversed(chinese_num):
-        # print(char_digit)
         if chinese_char_unit.get(char_digit) != None:
             unit = chinese_char_unit.get(char_digit)
-            # print("unit:"+str(unit))
             if unit == 10000 or unit == 100000000:
                 ldig.append(unit)
                 unit = 1
         else:
             dig = chinese_char_dict.get(char_digit)
-            # print("num:"+str(dig))
             if unit:
                 dig *= unit
                 unit = 0
