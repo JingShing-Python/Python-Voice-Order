@@ -53,6 +53,9 @@ O wish to make this a convenient tool help people who can not read or people can
 ## Ver1.4.1 Add equation module
 * Add ```dialogue_section.equation```
 
+## Ver1.5 Make module import even easier
+* shorten the module import by using exec and dict
+
 ## To do list
 * More calculate option
   - [ ] equation calculate(方程式計算)
