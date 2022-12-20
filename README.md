@@ -50,6 +50,9 @@ O wish to make this a convenient tool help people who can not read or people can
 * Add ```order_bot_program_module``` As new program that can help adding module easier
 * Add dict in setting that can help you import your own modules
 
+## Ver1.4.1 Add equation module
+* Add ```dialogue_section.equation```
+
 ## To do list
 * More calculate option
   - [ ] equation calculate(方程式計算)
