@@ -1,26 +1,25 @@
 import re
-from chinese_num_conf import UNIT_CN2AN
+chinese_char_unit = {
+    '十' : 10,
+    '拾' : 10,
+    '百' : 100,
+    '佰' : 100,
+    '千' : 1000,
+    '仟' : 1000,
+    '万' : 10000,
+    '萬' : 10000,
+    '亿' : 100000000,
+    '億' : 100000000,
+    '兆' : 1000000000000,
+}
 all_num = "零一二三四五六七八九"
-all_unit = "".join(list(UNIT_CN2AN.keys()))
+all_unit = "".join(list(chinese_char_unit.keys()))
 cn_pattern = f"負?([{all_num}{all_unit}]+點)?[{all_num}{all_unit}]+"
 smart_cn_pattern = f"-?([0-9]+.)?[0-9]+[{all_unit}]+"
 def chinese_to_arabic(chinese_num):
     chinese_char_dict = {
         '〇' : 0, '一' : 1, '二' : 2, '三' : 3, '四' : 4, '五' : 5, '六' : 6, '七' : 7, '八' : 8, '九' : 9, '零' : 0,
         '壹' : 1, '贰' : 2, '叁' : 3, '肆' : 4, '伍' : 5, '陆' : 6, '柒' : 7, '捌' : 8, '玖' : 9, '貮' : 2, '兩' : 2,
-    }
-    chinese_char_unit = {
-        '十' : 10,
-        '拾' : 10,
-        '百' : 100,
-        '佰' : 100,
-        '千' : 1000,
-        '仟' : 1000,
-        '万' : 10000,
-        '萬' : 10000,
-        '亿' : 100000000,
-        '億' : 100000000,
-        '兆' : 1000000000000,
     }
     unit = 0
     ldig = []
