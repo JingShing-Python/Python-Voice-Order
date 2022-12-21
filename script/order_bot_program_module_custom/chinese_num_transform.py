@@ -46,7 +46,7 @@ def chinese_to_arabic(chinese_num):
             tmp += x
     val += tmp
     return val
-def __sub_util(inputs, sub_mode: str = "number") -> str:
+def find_number(inputs, sub_mode: str = "number") -> str:
         try:
             if inputs:
                 if sub_mode == "date":
@@ -78,19 +78,19 @@ def chinese_in_string_transform(inputs: str) -> str:
     # date
     inputs = re.sub(
         fr"((({smart_cn_pattern})|({cn_pattern}))年)?([{all_num}十]+月)?([{all_num}十]+日)?",
-        lambda x: __sub_util(x.group(),"date"), inputs)
+        lambda x: find_number(x.group(),"date"), inputs)
     # fraction
     inputs = re.sub(fr"{cn_pattern}分之{cn_pattern}",
-                    lambda x: __sub_util(x.group(),"fraction"), inputs)
+                    lambda x: find_number(x.group(),"fraction"), inputs)
     # percent
     inputs = re.sub(fr"百分之{cn_pattern}",
-                    lambda x: __sub_util(x.group(),"percent"), inputs)
+                    lambda x: find_number(x.group(),"percent"), inputs)
     # celsius
     inputs = re.sub(fr"{cn_pattern}攝氏度",
-                    lambda x: __sub_util(x.group(),"celsius"), inputs)
+                    lambda x: find_number(x.group(),"celsius"), inputs)
     # number
     output = re.sub(cn_pattern,
-                    lambda x: __sub_util(x.group(),"number"), inputs)
+                    lambda x: find_number(x.group(),"number"), inputs)
     return output
 
 if __name__ == '__main__':
