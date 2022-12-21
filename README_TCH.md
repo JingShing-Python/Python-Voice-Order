@@ -60,6 +60,7 @@
 
 ## 版本1.5.1 修復中文數字轉阿拉伯數字BUG
 * 修復 ```chinese_num_transform.py```(舊版的句子只能翻譯一萬以下的數字)
+* 刪除 ```chinese_num_conf.py```
 
 ## 待作清單
 * 更多運算選項
