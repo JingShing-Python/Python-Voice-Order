@@ -24,13 +24,6 @@ module_import_dict={
     '幾點':'what_time',
     '時間':'what_time',
 }
-try:
-    from dialogue_section.order_meal import order_meal
-    module_data_dict["餐"]=order_meal
-except:
-    pass
-
-import dialogue_section.order_meal
 
 for key in module_import_dict.keys():
     program = '''
