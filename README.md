@@ -60,6 +60,7 @@ O wish to make this a convenient tool help people who can not read or people can
 
 ## Ver1.5.1 Fixed Chinese number to Arabic number
 * Fix ```chinese_num_transform.py```
+* Deleted ```chinese_num_conf.py```
 
 ## To do list
 * More calculate option
