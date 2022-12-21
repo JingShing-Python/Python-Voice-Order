@@ -63,7 +63,8 @@ O wish to make this a convenient tool help people who can not read or people can
 
 ## To do list
 * More calculate option
-  - [ ] equation calculate(方程式計算)
+  - [X] equation calculate(方程式計算)
+    - 22/12/20
   - [ ] Budget system(預算系統)
   - [ ] law calculate(法律計算機，判刑、罰款)
   - [ ] promotion calculate(優惠計算機)
