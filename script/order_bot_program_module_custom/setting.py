@@ -15,6 +15,7 @@ module_import_dict={
     # calculater
     '餐':'order_meal',
     '方':'equation',
+    '健身':'fit',
     # dialogue
     '你好':'hello',
     '我是':'my_name',
@@ -23,7 +24,6 @@ module_import_dict={
     '機率':'fake_rate',
     '幾點':'what_time',
     '時間':'what_time',
-    '健身':'fit',
 }
 
 for key in module_import_dict.keys():
