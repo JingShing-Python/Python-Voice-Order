@@ -16,6 +16,7 @@ module_import_dict={
     '餐':'order_meal',
     '方':'equation',
     '健身':'fit',
+    '法':'law',
     # dialogue
     '你好':'hello',
     '我是':'my_name',
