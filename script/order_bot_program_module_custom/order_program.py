@@ -49,7 +49,8 @@ class page_module(Frame):
         self.master = master.root
         
         # order bot
-        mode = 'tk_text'
+        # mode = 'tk_text'
+        mode = 'voice2'
         self.order_bot = Order_Bot(mode) # you can edit mode here
         # tk_text, voice1, voice2
         # voice1 is using google(very long time)

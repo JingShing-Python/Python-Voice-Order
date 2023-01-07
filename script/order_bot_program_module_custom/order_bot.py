@@ -81,7 +81,7 @@ class Order_Bot:
                 # init pyaudio object
                 p = PyAudio()
 
-                print("starting recording...")
+                # print("starting recording...")
 
                 # active voice stream
                 stream = p.open(format=sample_format, channels=channels, rate=fs, frames_per_buffer=chunk, input=True)
@@ -96,7 +96,7 @@ class Order_Bot:
                 # close stream
                 stream.close()
                 p.terminate()
-                print('stop recording...')
+                # print('stop recording...')
                 
                 with NamedTemporaryFile(delete=True) as fp:
                     # open voice file
