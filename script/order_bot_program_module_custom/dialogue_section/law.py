@@ -26,7 +26,7 @@ def law(self):
     if mode == '1':
         search_parameter = []
         self.line_speaker("請說出要查詢的條號，如363條、334條之1")
-        search_parameter = input_by_number()
+        search_parameter = input_by_number(self)
         result = search_by_number(dbpath, search_parameter, 1)
         if not result:
             self.line_speaker("很抱歉，沒有找到法條")
@@ -35,7 +35,7 @@ def law(self):
     elif mode == '2':
         search_parameter = []
         self.line_speaker("請說出要查詢的法條名，如殺人罪")
-        search_parameter = input_by_str()
+        search_parameter = input_by_str(self)
         result = search_by_str(dbpath, search_parameter, 1)
         if not result:
             self.line_speaker("很抱歉，沒有找到法條")
@@ -64,7 +64,7 @@ def law(self):
             self.line_speaker("請再說一次")
             isadd = self.listener()
         if isadd == '確認':
-                search_parameter, modify_parameter = input_all_info()
+                search_parameter, modify_parameter = input_all_info(self)
                 result = search_by_number(dbpath, search_parameter, 1)
                 if result:
                     self.line_speaker("該法條已存在，選擇確認或取消更新")
@@ -93,7 +93,7 @@ def law(self):
             self.line_speaker("請再說一次")
             isadd = self.listener()
         if isadd == '確認':
-            search_parameter, modify_parameter = input_all_info()
+            search_parameter, modify_parameter = input_all_info(self)
             result = search_by_number(dbpath, search_parameter, 1)
             if not result:
                 print("該法條不存在，選擇確認或取消新增")
@@ -113,44 +113,3 @@ def law(self):
         else:
             self.line_speaker("結束")
             exit()
-
-'''
-def add_law(dbpath):
-    search_parameter, modify_parameter = input_all_info()
-    result = search_by_number(dbpath, search_parameter, 1)
-    if result:
-        print("該法條已存在，選擇確認或取消更新")
-        isupdate = input()
-        while isupdate != '確認' and isupdate != '取消':
-            print("請再說一次")
-            isupdate = input()
-        if isupdate == '確認':
-            save_to_db(dbpath, 1, modify_parameter)
-            print("更新成功")
-        else:
-            print("結束新增")
-            exit()
-    else:
-        save_to_db(dbpath, 0, modify_parameter)
-        print("新增成功")
-'''
-'''
-def update_law(dbpath):
-    search_parameter, modify_parameter = input_all_info()
-    result = search_by_number(dbpath, search_parameter, 1)
-    if not result:
-        print("該法條不存在，選擇確認或取消新增")
-        isupdate = input()
-        while isupdate != '確認' and isupdate != '取消':
-            print("請再說一次")
-            isupdate = input()
-        if isupdate == '確認':
-            save_to_db(dbpath, 0, modify_parameter)
-            print("新增成功")
-        else:
-            print("結束更新")
-            exit()
-    else:
-        save_to_db(dbpath, 1, modify_parameter)
-        print("更新成功")
-'''
