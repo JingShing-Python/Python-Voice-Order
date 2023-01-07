@@ -16,9 +16,8 @@ def print_single_law(idx, data):
     law_item += data[idx][5]
     print(law_item)
 
-
-def input_by_number():
-    number_of = input()
+def input_by_number(self):
+    number_of = self.listener()
     number_of = chinese_in_string_transform(number_of)
     search_parameter = []
     # number_of = number_of.replace('第', '')
@@ -46,11 +45,11 @@ def input_by_number():
     return search_parameter
 
 
-def input_by_str():
+def input_by_str(self):
     name = ''
     search_parameter = []
     name += '%'
-    name_of = input()
+    name_of = self.listener()
     name_of = name_of.replace('罪', '')
     name += name_of
     name += '%'
@@ -58,39 +57,39 @@ def input_by_str():
     return search_parameter
 
 
-def input_all_info():
+def input_all_info(self):
     print('條號:')
-    number = input()
+    number = self.listener()
     number = chinese_in_string_transform(number)
     number = "".join(filter(str.isdigit, number))
     '''
     while number.isnumeric() == False:
         print("請再說一次")
-        number = input()
+        number = self.listener()
     '''
     print('之幾:')
-    of = input()
+    of = self.listener()
     of = chinese_in_string_transform(of)
     of = "".join(filter(str.isdigit, of))
     '''
     while of.isnumeric() == False:
         print("請再說一次")
-        of = input()
+        of = self.listener()
     '''
     print('法條名:')
-    name = input()
+    name = self.listener()
     print('選擇確認或取消告訴乃論?')
-    isNTWC = input()
+    isNTWC = self.listener()
     while isNTWC != '確認' and isNTWC != '取消':
         print("請再說一次")
-        isNTWC = input()
+        isNTWC = self.listener()
     if isNTWC == '確認':
         isNTWC = '1'
     else:
         isNTWC ='0'
     issin = '0'
     print('法條內容:')
-    content = input()
+    content = self.listener()
     search_parameter = []
     search_parameter.append(number)
     search_parameter.append(of)
