@@ -67,10 +67,13 @@ Our wish to make this a convenient tool help people who can not read or people c
   - [X] equation calculate(方程式計算)
     - 22/12/20
   - [ ] Budget system(預算系統)
-  - [ ] law calculate(法律計算機，判刑、罰款)
+  - [X] law calculate(法律查詢，判刑、罰款)
+    - 22/1/5
   - [ ] promotion calculate(優惠計算機)
   - [X] Add module process
     - 22/12/19
+  - [X] BMI calculate
+    - 22/1/5
 
 * More interesting response
   - [ ] promotion hint(詢問時間和問好時做優惠提醒或點餐提醒)
